@@ -10,6 +10,7 @@ import {
 import { useUser } from "../context/UserContext";
 import PropertyCard from "../components/PropertyCard";
 import FavouritesList from "../components/FavouritesList";
+import Footer from "../components/Footer";
 
 // Toast
 
@@ -234,6 +235,8 @@ export default function Dashboard() {
           )}
         </section>
       </main>
+
+      <Footer />
 
       {/* Toast notifications */}
       <div className="fixed bottom-5 right-5 flex flex-col gap-2 z-50 pointer-events-none">

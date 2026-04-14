@@ -1,6 +1,7 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authApi } from '../api';
+import Footer from '../components/Footer';
 
 interface FormState {
   email: string;
@@ -38,7 +39,7 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
         <h1 className="text-2xl font-bold text-slate-800 mb-1">Welcome back</h1>
         <p className="text-sm text-slate-500 mb-6">
@@ -96,6 +97,7 @@ export default function Login() {
           </button>
         </form>
       </div>
+      <Footer />
     </div>
   );
 }
