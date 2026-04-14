@@ -20,10 +20,12 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
 
 // Middleware
 
-app.use(cors({
-  origin: "https://aayushshres.github.io",
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: "https://aayushshres.github.io",
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(cookieParser());
 

@@ -22,7 +22,7 @@ function signToken(payload: {
 function setTokenCookie(res: Response, token: string): void {
   res.cookie(COOKIE_NAME, token, {
     httpOnly: true,
-    sameSite: "lax",
+    sameSite: "none",
     secure: process.env.NODE_ENV === "production",
     maxAge: COOKIE_MAX_AGE_MS,
   });
@@ -89,11 +89,9 @@ router.post("/register", async (req: Request, res: Response): Promise<void> => {
   } catch (err: unknown) {
     const sqliteErr = err as { code?: string };
     if (sqliteErr.code === "SQLITE_CONSTRAINT_UNIQUE") {
-      res
-        .status(409)
-        .json({
-          errors: { email: "An account with that email already exists." },
-        });
+      res.status(409).json({
+        errors: { email: "An account with that email already exists." },
+      });
       return;
     }
     throw err;
