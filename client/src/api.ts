@@ -40,7 +40,7 @@ async function apiFetch<T>(
   path: string,
   options: RequestInit = {},
 ): Promise<T> {
-  const res = await fetch(path, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}${path}`, {
     ...options,
     credentials: "include",
     headers: {
