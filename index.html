@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechKraft Buyer Portal</title>
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/TechKraft-Buyer-Portal-Take-Home-Assessment/assets/index-w697-jA9.js"></script>
+    <link rel="stylesheet" crossorigin href="/TechKraft-Buyer-Portal-Take-Home-Assessment/assets/index-C-EGOoQp.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
